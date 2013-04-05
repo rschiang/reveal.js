@@ -206,6 +206,7 @@ body {
 
 	text-align: left;
 	margin: 0 0 0 1em;
+	padding-bottom: 0.5em;
 }
 
 .reveal ol {
@@ -230,6 +231,10 @@ body {
 .reveal ol ul {
 	display: block;
 	margin-left: 40px;
+}
+
+.reveal li {
+	padding-top: 0.5em;
 }
 
 .reveal p {
@@ -297,6 +302,11 @@ body {
 	font-family: monospace;
 	overflow: auto;
 	max-height: 400px;
+}
+
+.reveal code.fill-slide {
+	max-width: 960px;
+	max-height: 700px;
 }
 
 .reveal table th,
@@ -1258,4 +1268,49 @@ body {
 	visibility: hidden;
 }
 
-
+/*********************************************
+ * RESPONSIVE COLUMNS INSPIRED BY FOUNDATION
+ *********************************************/
+.reveal .grid-row {
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 -15px;
+  *zoom: 1; }
+  .reveal .grid-row:before, .reveal .grid-row:after {
+    content: " ";
+    display: table; }
+  .reveal .grid-row:after {
+    clear: both; }
+  .reveal .grid-row .column, .reveal .grid-row .columns {
+    float: left;
+    min-height: 1px;
+    position: relative; }
+  .reveal .grid-row [class*="column"] + [class*="column"]:last-child {
+    float: right; }
+  .reveal .grid-row [class*="column"] + [class*="column"].end {
+    float: left; }
+  .reveal .grid-row .one {
+    width: 8.33333%; }
+  .reveal .grid-row .two {
+    width: 16.66667%; }
+  .reveal .grid-row .three {
+    width: 25%; }
+  .reveal .grid-row .four {
+    width: 33.33333%; }
+  .reveal .grid-row .five {
+    width: 41.66667%; }
+  .reveal .grid-row .six {
+    width: 50%; }
+  .reveal .grid-row .seven {
+    width: 58.33333%; }
+  .reveal .grid-row .eight {
+    width: 66.66667%; }
+  .reveal .grid-row .nine {
+    width: 75%; }
+  .reveal .grid-row .ten {
+    width: 83.33333%; }
+  .reveal .grid-row .eleven {
+    width: 91.66667%; }
+  .reveal .grid-row .twelve {
+    width: 100%; }
