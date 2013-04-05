@@ -40,6 +40,7 @@ module.exports = function(grunt) {
 
 		sass: {
 			main: {
+				style: "compressed",
 				files: {
 					'css/theme/default.css': 'css/theme/source/default.scss',
 					'css/theme/beige.css': 'css/theme/source/beige.scss',
