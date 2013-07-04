@@ -97,9 +97,9 @@
 				</section>
 
 				<section>
-					<h2>rvl.io</h2>
+					<h2>Slid.es</h2>
 					<p>
-						如果你不喜歡用 HTML 寫簡報，<br/>你可以使用線上編輯器 <a href="http://www.rvl.io" target="_blank">rvl.io</a>。（英文）
+						不會寫程式？沒問題。<br/>有全功能的線上編輯器 <a href="http://www.rvl.io" target="_blank">Slid.es</a>。（英文）
 					</p>
 				</section>
 
@@ -135,12 +135,14 @@
 
 						致那些喜歡這套的人。說明與其他資訊在[這裡](https://github.com/hakimel/reveal.js#markdown)。
 
-							<section data-markdown>
-							  ## Markdown 支援
+						```
+						<section data-markdown>
+						  ## Markdown 支援
 
-							  致那些喜歡這套的人。
-							  說明與其他資訊在[這裡](https://github.com/hakimel/reveal.js#markdown)。
-							</section>
+						  致那些喜歡這套的人。
+						  說明與其他資訊在[這裡](https://github.com/hakimel/reveal.js#markdown)。
+						</section>
+						```
 					</script>
 				</section>
 
@@ -178,53 +180,71 @@
 				</section>
 
 				<section>
-					<section data-state="alert">
-						<h2>全域狀態</h2>
-						<p>
-							在投影片上設定 <code>data-state="藍藍路"</code>，<code>"藍藍路"</code> 就會在開啟投影片的時候被加進文件元素的類別（class）裡。這能讓你套用更大規模的樣式變化，例如切換背景。
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-state="blackout">
-						<h2>「烏嘛嘛」</h2>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-state="soothe">
-						<h2>「療癒風」</h2>
-						<a href="#" class="image navigate-next">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(-90deg);">
-						</a>
-					</section>
+					<h2>全域狀態</h2>
+					<p>
+						在投影片上設定 <code>data-state="藍藍路"</code>，<code>"藍藍路"</code> 就會在開啟投影片的時候被加進文件元素的類別（class）裡。這能讓你套用更大規模的樣式變化，例如切換背景。
+					</p>
 				</section>
 
 				<section data-state="customevent">
 					<h2>自訂事件</h2>
 					<p>
-						另外只要綁定 <code>data-state</code> 所指定的名字，便能以投影片為單位觸發自訂事件。
+						另外，只要綁定 <code>data-state</code> 所指定的名字，便能以投影片為單位觸發自訂事件。
 					</p>
-					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
+					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+Reveal.addEventListener( 'customevent', function() {
 	console.log( '觸發了自訂事件' );
 } );
 					</code></pre>
 				</section>
 
 				<section>
+					<section data-background="#007777">
+						<h2>投影片背景</h2>
+						<p>
+							在投影片上設定 <code>data-background="#007777"</code>就能改變頁面的背景顏色。支援所有 CSS 色彩格式。
+						</p>
+						<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
+						<h2>影像背景</h2>
+						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
+						<h2>重複影像背景</h2>
+						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					</section>
+				</section>
+
+				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+					<h2>背景變換</h2>
+					<p>
+						傳給 reveal.js <code>backgroundTransition: 'slide'</code> 這個參數設定，背景就會滑動而非淡出。
+					</p>
+				</section>
+
+				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
+					<h2>覆寫背景變換</h2>
+				 	<p>
+						你可以用 <code>data-background-transition="slide"</code> 改變單一投影片的背景變換方式。
+					</p>
+				</section>
+
+				<section>
 					<h2>智慧引句</h2>
 					<p>
-						分為兩種形式，內置：<q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">標準的好處在於總是有太多標準供我們選擇</q>以及區塊：
+						分為兩種形式，內置（inline）：<br/><q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">「標準的好處在於總是有太多選擇」</q><br/>以及區塊（block）：
 					</p>
 					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						多年來一直有這麼個理論：<br/>千萬隻猴子對著千萬台打字機盲目亂敲，總能重製出一套莎士比亞全集。<br/>網際網路卻證明並非如此。
+						「多年來一直有這麼個理論：千萬隻猴子對著千萬台打字機盲目亂敲，總能重製出一套莎士比亞全集。網際網路卻證明並非如此。」
 					</blockquote>
 				</section>
 
 				<section>
 					<h2>漂亮的程式碼</h2>
-					<pre><code contenteditable>
+					<pre><code data-trim contenteditable>
 function linkify( selector ) {
   if( supports3DTransforms ) {
 
@@ -246,8 +266,7 @@ function linkify( selector ) {
 				<section>
 					<h2>星際連線</h2>
 					<p>
-						你可以互相連結投影片，
-						<a href="#/2/3">像這樣</a>。
+						你可以互相連結投影片，<a href="#/2/3">像這樣</a>。
 					</p>
 				</section>
 
@@ -307,7 +326,7 @@ function linkify( selector ) {
 					<ul>
 						<li><a href="https://github.com/RSChiang/reveal.js">中文版 GitHub 原始碼</a></li>
 						<li><a href="https://github.com/hakimel/reveal.js">原版 GitHub 原始碼</a></li>
-						<li><a href="http://slid.es/">slid.es（英文）</a></li>
+						<li><a href="http://slid.es/">線上編輯器（英文）</a></li>
 					</ul>
 				</section>
 
@@ -355,7 +374,7 @@ function linkify( selector ) {
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
